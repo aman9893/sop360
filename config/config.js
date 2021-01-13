@@ -1,18 +1,16 @@
-
 var mysql = require('mysql');
 var connection = mysql.createConnection({
-    host: 'http://13.234.17.12',
-    port: '3306',
+    host: 'localhost',
     user: 'root',
     password: '12345',
     database: 'shopCart360',
-    multipleStatements: true,
+    multipleStatements: true
 });
 connection.connect(function(err) {
     if (!err) {
         console.log("Database is connected");
     } else {
-        console.log(err,"Error while connecting with database");
+        console.log("Error while connecting with database");
     }
 });
 
