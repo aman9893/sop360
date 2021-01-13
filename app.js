@@ -37,12 +37,12 @@ app.use(bodyParser.urlencoded({
 //     res.setHeader('Content-Type', 'application/json');
 //     res.send(swaggerSpec);
 //   });
-//   app.use(cors());
+  app.use(cors());
 //   app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-// app.use('/', routes)
+app.use('/', routes)
 
-// app.get('/', (req,res) => res.send('Hello World'))
+app.get('/test', (req,res) => res.send('Hello World'))
 
 app.listen(port, ()=> console.log('port is running successfully'))
 
