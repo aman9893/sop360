@@ -7,7 +7,7 @@ const bodyParser = require('body-parser')
 const swaggerUi = require('swagger-ui-express')
 const swaggerJSDoc = require('swagger-jsdoc');
 const app = express()
-const port = 'http://13.234.17.12:5000'
+const port = '3306'
 app.set('views', path.join(__dirname,'views'));
 app.set('view engine','html');
 
