@@ -1,3 +1,4 @@
+
 const express = require('express')
 const routes = require('./router/router')
 const path = require('path')
@@ -39,9 +40,9 @@ app.use(bodyParser.urlencoded({
 //   app.use(cors());
 //   app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-app.use('/', routes)
+// app.use('/', routes)
 
-app.get('/test', (req,res) => res.send('Hello World'))
+// app.get('/', (req,res) => res.send('Hello World'))
 
 app.listen(port, ()=> console.log('port is running successfully'))
 
