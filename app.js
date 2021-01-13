@@ -9,7 +9,7 @@ const swaggerJSDoc = require('swagger-jsdoc');
 const app = express();
 
 
-const port = 8000
+const port = 3011
 // 8000
 //3011
 app.set('views', path.join(__dirname, 'views'));
@@ -26,10 +26,10 @@ const swaggerDefinition = {
     version: '1.0.0',
     description: 'A sample API',
   },
-  host: "localhost:8000",
+//   host: "localhost:3011",
   // localhost:8000
   // localhost:3011
-  // host: "ec2-18-216-154-83.us-east-2.compute.amazonaws.com:3011",
+  host: "ec2-13-234-17-12.ap-south-1.compute.amazonaws.com:3011",
   basePath: '/',
 };
 
