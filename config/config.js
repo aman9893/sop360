@@ -1,6 +1,6 @@
 var mysql = require('mysql');
 var connection = mysql.createConnection({
-    host: 'http://13.234.17.12:3011',
+    host: 'localhost',
     user: 'root',
     password: '12345',
     database: 'shopCart360',
