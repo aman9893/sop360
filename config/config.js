@@ -2,8 +2,8 @@ var mysql = require('mysql');
 var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '',
-    database: 'shopcart',
+    password: '12345',
+    database: 'shopCart360',
     multipleStatements: true
 });
 connection.connect(function(err) {
@@ -14,5 +14,3 @@ connection.connect(function(err) {
         console.log("Error while connecting with database");
     }
 });
-
-module.exports = connection;
