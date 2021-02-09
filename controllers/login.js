@@ -246,7 +246,10 @@ module.exports.UpdatePassword = function (req, res) {
                 message: 'Password  Update  Successfully'
             })
         }
-    })
+    });
+
+
+
 }
 
 

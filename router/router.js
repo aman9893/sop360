@@ -7,6 +7,7 @@ const TaskTodo =require('../controllers/todo-management/todo')
 const admin =require('../controllers/admin-role/role')
 const KhataBook =require('../controllers/khata-book/khata')
 const billData =require('../controllers/bill-data/bill')
+const messageData =require('../controllers/bulkmessage/message')
 
 
 
@@ -15,6 +16,8 @@ const router =  express.Router();
 
 
 /*--------------------------------------------dashboard api-----------------------*/
+router.post('/api/sendBulkMessage', messageData.sendBulkMessage);
+
 
 router.post('/api/login', logincontrollerObj.authenticate);
 router.post('/api/register', registercontrollerObj.register);

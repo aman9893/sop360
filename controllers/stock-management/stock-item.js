@@ -17,18 +17,28 @@ module.exports.addStockManagement = function (req, res) {
         "user_id": req.body.user_id,
         "item_name": req.body.item_name,
         "item_description": req.body.item_description,
-        "item_related": req.body.item_related,
-        "item_holder_name": req.body.item_holder_name,
+        "item_assginvalue": req.body.item_assginvalue,
+        "item_selling_price": req.body.item_selling_price,
         "item_quantity": req.body.item_quantity,
         "item_status": req.body.item_status,
-        "item_issued_date": req.body.item_issued_date,
-        "item_return_date": req.body.item_return_date,
+        "create_date": req.body.create_date,
+        "purchase_date": req.body.purchase_date,
+        "expiry_date": req.body.expiry_date,
+        "buying_price": req.body.buying_price,
+        "item_number": req.body.item_number,
+        "vendor_number": req.body.vendor_number,
+        "vendor_name": req.body.vendor_name,
+        "category": req.body.category,
+        "gst_tax": req.body.gst_tax,
+        "discunt": req.body.discunt,
+        "total_item_amt": req.body.total_item_amt,
+
     }
     connection.query('INSERT INTO stock_management SET ?', users, function (error, results, fields) {
         if (error) {
             res.json({
                 status: false,
-                message: 'there are some errorwith query'
+                message: error
             })
         } else {
             var stock_id = results.insertId;
@@ -63,19 +73,27 @@ module.exports.UpdateStockInfoData = function (req, res) {
     var data = {
         "item_name": req.body.item_name,
         "item_description": req.body.item_description,
-        "item_related": req.body.item_related,
-        "item_holder_name": req.body.item_holder_name,
+        "item_assginvalue": req.body.item_assginvalue,
+        "item_selling_price": req.body.item_selling_price,
         "item_quantity": req.body.item_quantity,
         "item_status": req.body.item_status,
-        "item_issued_date": req.body.item_issued_date,
-        "item_return_date": req.body.item_return_date,
+        "create_date": req.body.create_date,
+        "purchase_date": req.body.purchase_date,
+        "expiry_date": req.body.expiry_date,
+        "buying_price": req.body.buying_price,
+        "item_number": req.body.item_number,
+        "vendor_number": req.body.vendor_number,
+        "category": req.body.category,
+        "gst_tax": req.body.gst_tax,
+        "discunt": req.body.discunt,
+        "total_item_amt": req.body.total_item_amt,
     }
 
     connection.query('UPDATE stock_management SET ? where stock_id = ? ', [data, stock_id], function (error, results, fields) {
         if (error) {
             res.json({
                 status: false,
-                message: 'There some error with query'
+                message: error
             })
         } else {
             connection.query('SELECT * FROM stock_management WHERE stock_id = ?', [stock_id], function (error, results, fields) {
@@ -93,10 +111,10 @@ module.exports.updateStockList = function (req, res) {
     let stock_id = req.body.stock_id
     var data = {
         "item_status": req.body.item_status,
-        "item_issued_date": req.body.item_issued_date,
-        "item_return_date": req.body.item_return_date,
-        "item_quantity": req.body.item_return_date,
-        "item_holder_name": req.body.item_holder_name,
+        "create_date": req.body.create_date,
+        "purchase_date": req.body.purchase_date,
+        "item_quantity": req.body.purchase_date,
+        "item_selling_price": req.body.item_selling_price,
     }
 
     connection.query('UPDATE stock_management SET ? WHERE stock_id = ?', [data, stock_id], function (error, results, fields) {
