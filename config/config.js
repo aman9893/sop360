@@ -3,7 +3,7 @@ var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '12345',
-    database: 'shopcart',
+    database: 'shopCart360',
     multipleStatements: true
 });
 connection.connect(function(err) {
